@@ -28,7 +28,7 @@ public class win_activity extends AppCompatActivity {
         textView=findViewById(R.id.ans);
         String[] images = new String[0];
         try {
-            images = getAssets().list("pre_logo");
+            images = getAssets().list("post_logo");
             imgList = new ArrayList<String>(Arrays.asList(images));
         } catch (IOException e) {
             throw new RuntimeException(e);
