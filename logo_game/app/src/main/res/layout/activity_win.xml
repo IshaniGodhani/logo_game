@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".win_activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.50"
+        android:background="@drawable/radiaus"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/back"
+            android:src="@drawable/arrow_back"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="level"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:id="@+id/levelnum"
+            android:layout_gravity="center"
+            android:layout_marginStart="80dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/hints"
+            android:id="@+id/hints"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            />
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/win_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="201dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sometext"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:id="@+id/ans"
+            android:textStyle="bold"
+            android:layout_marginTop="80dp"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="next"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            app:backgroundTint="@null"
+            android:id="@+id/next"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="80dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>
