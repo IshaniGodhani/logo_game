@@ -172,17 +172,17 @@ public class Quiz_Activity extends AppCompatActivity implements View.OnClickList
                 }
             }
         }
-        String ans=String.valueOf(ans_btn);
+        String result=String.valueOf(ans_btn);
         preferences=getSharedPreferences("myPref",MODE_PRIVATE);
         editor=preferences.edit();
-        if (ans.equals(ans)) {
+        if (result.equals(ans)) {
             editor.putString("matched"+pos,"true");
             editor.commit();
             Intent intent=new Intent(Quiz_Activity.this,win_activity.class);
             startActivity(intent);
 
         }
-        else if(!ans.equals(ans))
+        else if(!result.equals(ans))
         {
             editor.putString("matched"+pos,"false");
             editor.commit();

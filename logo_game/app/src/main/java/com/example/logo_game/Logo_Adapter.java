@@ -36,25 +36,72 @@ public class Logo_Adapter extends RecyclerView.Adapter<Logo_Adapter.View_holder>
     public void onBindViewHolder(@NonNull View_holder holder, int position) {
         int pos=position;
         InputStream inputstream = null;
-        try
+        if(position==0)
         {
-            inputstream = context.getAssets().open("pre_logo/"+imgList.get(pos));
-            System.out.println("No of Images="+imgList.size());
-            System.out.println("imgList Position="+imgList.get(position));
+            try
+            {
+                inputstream = context.getAssets().open("pre_logo/level1/"+imgList.get(pos));
+                System.out.println("No of Images="+imgList.size());
+                System.out.println("imgList Position="+imgList.get(position));
+            }
+            catch (IOException e)
+            {
+                throw new RuntimeException(e);
+            }
+            Drawable drawable = Drawable.createFromStream(inputstream, null);
+            holder.logo.setImageDrawable(drawable);
         }
-        catch (IOException e)
+        if(position==1)
         {
-            throw new RuntimeException(e);
+            try
+            {
+                inputstream = context.getAssets().open("pre_logo/level2/"+imgList.get(pos));
+                System.out.println("No of Images="+imgList.size());
+                System.out.println("imgList Position="+imgList.get(position));
+            }
+            catch (IOException e)
+            {
+                throw new RuntimeException(e);
+            }
+            Drawable drawable = Drawable.createFromStream(inputstream, null);
+            holder.logo.setImageDrawable(drawable);
         }
-        Drawable drawable = Drawable.createFromStream(inputstream, null);
-        holder.logo.setImageDrawable(drawable);
+        if(position==2)
+        {
+            try
+            {
+                inputstream = context.getAssets().open("pre_logo/USA/"+imgList.get(pos));
+                System.out.println("No of Images="+imgList.size());
+                System.out.println("imgList Position="+imgList.get(position));
+            }
+            catch (IOException e)
+            {
+                throw new RuntimeException(e);
+            }
+            Drawable drawable = Drawable.createFromStream(inputstream, null);
+            holder.logo.setImageDrawable(drawable);
+        }
+        if(position==3)
+        {
+            try
+            {
+                inputstream = context.getAssets().open("pre_logo/level3/"+imgList.get(pos));
+                System.out.println("No of Images="+imgList.size());
+                System.out.println("imgList Position="+imgList.get(position));
+            }
+            catch (IOException e)
+            {
+                throw new RuntimeException(e);
+            }
+            Drawable drawable = Drawable.createFromStream(inputstream, null);
+            holder.logo.setImageDrawable(drawable);
+        }
         holder.logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context,Quiz_Activity.class);
                 System.out.println("Pos="+pos);
                 intent.putExtra("index",pos);
-
                 context.startActivity(intent);
             }
         });
